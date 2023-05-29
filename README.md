@@ -22,6 +22,12 @@ To install the requirements, create a virtual environment and install the [yolov
 
 We provide yolov5 pretrained weights for you to finetune your models as a base, but you are free to use other object detection libraries. To finetune the weights on your dataset, run the following command from the yolov5 repo.
 
+
+#### Additional generate_path.py and reannotate.py
+Additional files generate_path.py and reannotate.py will be needed to run to specify images' path to the Yolov5 trainer and to reannotate the class id of each labels to 0 for the detection of only one class.
+
+Make sure to also arrange the data into './yolov5/custom_dataset/images/train'  and './yolov5/custom_dataset/images/val' as well. custom.yaml should also be place in ./yolov5/data folder.
+
 ```shell
 python train.py --data coco.yaml --epochs 300 --weights 'pretrained_weights.pt' --cfg yolov5n.yaml  --batch-size 128
 ```
